@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".AddCarRecordActivity"
+    android:background="@drawable/gradient"
+    >
+
+
+
+
+    <ImageView
+        android:id="@+id/carImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/car"/>
+
+    <Button
+        android:id="@+id/addImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Image"
+        android:layout_gravity="center"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Car Name: "
+            android:textColor="@color/colorBlack" />
+
+        <EditText
+            android:id="@+id/editCarName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="Name"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand Name"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editBrand"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:hint="Brand"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editModel"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:hint="Model"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chasis No."
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editChasis"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Chasis"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Variant"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editVariant"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:hint="Variant"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transmission"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editTransmission"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:hint="Transmission"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mileage"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editMileage"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:hint="Mileage"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editCity"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editPrice"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editDescription"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:hint="Description"
+            android:layout_weight="2"
+            android:background="@drawable/edittext"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addRecordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Vehicle"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
+
+</ScrollView>
