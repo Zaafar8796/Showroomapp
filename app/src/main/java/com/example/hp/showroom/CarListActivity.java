@@ -1,18 +1,29 @@
 package com.example.hp.showroom;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.orm.SugarRecord;
 
 import java.util.ArrayList;
@@ -20,7 +31,14 @@ import java.util.List;
 
 public class CarListActivity extends AppCompatActivity implements View.OnClickListener{
 
+   // private FirebaseStorage mStorageRef;
+    //private FirebaseDatabase mDatabaseRef;
+
     TextView nameCar;
+
+    FirebaseDatabase database;
+    DatabaseReference myRef ;
+    List<CarUpload> list;
 
     private List<Car> carList = new ArrayList<>();
     private RecyclerView carRecycler;
@@ -43,6 +61,41 @@ public class CarListActivity extends AppCompatActivity implements View.OnClickLi
         carRecycler.setLayoutManager(mLayoutManager);
         carRecycler.setItemAnimator(new DefaultItemAnimator());
         carRecycler.setAdapter(mAdapter);
+
+//        mStorageRef = FirebaseStorage.getInstance();
+//        mDatabaseRef = FirebaseDatabase.getInstance();
+////        myRef = database.getReference("Cars");
+
+//        myRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // This method is called once with the initial value and again
+//                // whenever data at this location is updated.
+//                list = new ArrayList<CarUpload>();
+//                for(DataSnapshot dataSnapshot1 :dataSnapshot.getChildren()){
+//
+//                    CarUpload value = dataSnapshot1.getValue(CarUpload.class);
+//                    CarUpload car = new CarUpload();
+//                    String name = value.getCarname();
+//                    String price = value.getPrice();
+//                    //String email = value.getEmail();
+//                    car.setCarname(name);
+//                    car.setPrice(price);
+//                    //car.setAddress(address);
+//                    list.add(car);
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                // Failed to read value
+//                Log.w("Hello", "Failed to read value.", error.toException());
+//            }
+//        });
+
+
 
         prepareCarData();
 
@@ -111,6 +164,10 @@ public class CarListActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent2);
                 break;
 
+            case R.id.facebook:
+                facebookpage("297572154275335");
+
+                break;
             case R.id.logout:
                 SharedPreferences mySharedPreferences;
                 SharedPreferences.Editor myEditor;
@@ -138,5 +195,15 @@ public class CarListActivity extends AppCompatActivity implements View.OnClickLi
         }
 
 
+    }
+
+    private  void facebookpage(String id){
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/"+id));
+            startActivity(intent);
+        }catch(ActivityNotFoundException e){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com"+id));
+            startActivity(intent);
+        }
     }
 }
